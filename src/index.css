@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Arcade';
+  src: url('../public/fonts/ARCADE_I.TTF') format('truetype');
+}
+
+:root {
+  --primary: #1a56db;
+  --primary-dark: #1e429f;
+  --primary-light: #3b82f6;
+  --accent: #7e3af2;
+  --success: #0e9f6e;
+  --warning: #ff5a1f;
+  --error: #e02424;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* custom responsive grid for alphabet visualization */
+.grid-cols-26 {
+  grid-template-columns: repeat(26, minmax(30px, 1fr));
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* animations for results */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.min-h-20 {
+  min-height: 5rem;
+}
+
+/* add smooth transitions */
+button, input, textarea {
+  transition: all 0.2s ease-in-out;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* custom scrollbar for the visualization container */
+.overflow-x-auto {
+  scrollbar-width: thin;
+  scrollbar-color: #d1d5db #f1f1f1;
+}
+
+/* range slider style */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  border-radius: 3px;
+  background: linear-gradient(to right, #008000 0%, #008000 50%, #e5e7eb 50%, #e5e7eb 100%);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #008000;
+  cursor: pointer;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-in-out;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+input[type="range"]::-moz-range-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #008000;
+  cursor: pointer;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-in-out;
+}
+
+input[type="range"]::-moz-range-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
